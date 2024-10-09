@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Images</h1>
+        <ul>
+            {% for image in images %}
+                <li>{{ image }} 
+                    <a href="/download/{{ image }}">Download</a> | 
+                    <a href="/download/{{ image }}?decrypt=True">Decrypt & Download</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
